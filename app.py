@@ -94,7 +94,7 @@ with tab2:
     # Topik 2: Dua Tipe Diabetes
     with st.expander("🧬 Dua Tipe Diabetes"):
         st.markdown("""
-        **Diabetes Tipe 1** merupakan jenis utama diabetes yang dapat dialami pada segala usia, tetapi sering terjadi pada anak-anak dan dewasa muda. Penderita diabetes tipe 1 memerlukan insulin seumur hidup untuk bertahan hidup karena tubuh mereka tidak dapat memproduksi insulin sama sekali.
+        **Diabetes Tipe 1** merupakan jenis utama diabetes yang dapat dialami pada segala usia, tetapi sering terjadi pada anak-anak dan orang dewasa. Penderita diabetes tipe 1 memerlukan insulin seumur hidup untuk bertahan hidup karena tubuh mereka tidak dapat memproduksi insulin sama sekali.
 
         **Diabetes Tipe 2** mencakup sebagian besar kasus diabetes di seluruh dunia, yaitu lebih dari **90%**. Diabetes tipe 2 dapat dicegah atau ditunda kemunculannya melalui perubahan gaya hidup sehat. Bahkan, bukti ilmiah terkini menunjukkan bahwa remisi diabetes tipe 2 mungkin dapat dicapai apabila kondisi ini ditangani sejak tahap awal.
         """)
