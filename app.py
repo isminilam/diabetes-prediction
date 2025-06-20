@@ -88,7 +88,7 @@ with tab2:
     # Topik 1: Apa Itu Diabetes
     with st.expander("📌 Apa Itu Diabetes?"):
         st.markdown("""
-        Diabetes adalah kondisi kronis yang serius yang terjadi ketika tubuh tidak dapat memproduksi cukup insulin atau tidak dapat menggunakan insulin secara efektif, sehingga menyebabkan kadar glukosa (gula) dalam darah meningkat (hiperglikemia).
+        Diabetes adalah kondisi kronis yang terjadi ketika tubuh tidak dapat memproduksi cukup insulin atau tidak dapat menggunakan insulin secara efektif, sehingga menyebabkan kadar glukosa (gula) dalam darah meningkat (hiperglikemia).
         """)
 
     # Topik 2: Dua Tipe Diabetes
