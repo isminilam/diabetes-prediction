@@ -94,9 +94,9 @@ with tab2:
     # Topik 2: Dua Tipe Diabetes
     with st.expander("🧬 Dua Tipe Diabetes"):
         st.markdown("""
-        **Diabetes Tipe 1** merupakan jenis utama diabetes yang dapat dialami pada segala usia, tetapi sering terjadi pada anak-anak dan orang dewasa. Penderita diabetes tipe 1 memerlukan insulin seumur hidup untuk bertahan hidup karena tubuh mereka tidak dapat memproduksi insulin sama sekali.
+        **Diabetes Tipe 1** merupakan jenis utama diabetes yang dapat dialami pada segala usia, tetapi sering terjadi pada anak-anak dan orang dewasa. Penderita diabetes tipe 1 memerlukan insulin seumur hidup untuk bertahan hidup karena tubuh mereka tidak dapat memproduksi insulin.
 
-        **Diabetes Tipe 2** mencakup sebagian besar kasus diabetes di seluruh dunia, yaitu lebih dari **90%**. Diabetes tipe 2 dapat dicegah atau ditunda kemunculannya melalui perubahan gaya hidup sehat. Bahkan, bukti ilmiah terkini menunjukkan bahwa remisi diabetes tipe 2 mungkin dapat dicapai apabila kondisi ini ditangani sejak tahap awal.
+        **Diabetes Tipe 2** mencakup sebagian besar kasus diabetes di seluruh dunia, yaitu lebih dari **90%**. Diabetes tipe 2 dapat dicegah atau ditunda kemunculannya melalui perubahan gaya hidup sehat. Bahkan, bukti ilmiah terkini menunjukkan bahwa diabetes tipe 2 dapat membaik atau dikendalikan sepenuhnya, jika ditangani sejak awal..
         """)
 
 
@@ -118,7 +118,7 @@ with tab2:
         st.markdown("""
         #### 🌍 **Di Dunia**
         - Menurut *International Diabetes Federation (IDF) Atlas*, pada tahun 2024 diperkirakan terdapat sekitar **588,7 juta orang dewasa** (usia 20–79 tahun) di seluruh dunia yang hidup dengan diabetes.  
-        - Tanpa upaya pencegahan yang serius, jumlah ini diperkirakan akan meningkat tajam menjadi **852,5 juta jiwa pada tahun 2050**.
+        - Tanpa upaya pencegahan yang serius, jumlah ini diperkirakan akan meningkat menjadi **852,5 juta jiwa pada tahun 2050**.
 
         #### 🇮🇩 **Di Indonesia**
         - Masih berdasarkan data IDF, Indonesia menempati **peringkat ke-5** negara dengan jumlah penderita diabetes terbanyak di dunia pada tahun 2024.  
