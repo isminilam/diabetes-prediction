@@ -25,16 +25,15 @@ tab1, tab2 = st.tabs(["Prediksi Diabetes", "Kenali Diabetes"])
 with tab1:
     st.subheader("🩺 Prediksi Risiko Diabetes Tipe 2")
     st.write("Masukkan informasi berikut untuk memprediksi risiko diabetes.")
+
     with st.form("form_prediksi"):
         col1, col2 = st.columns(2)
 
         with col1:
             gender = st.selectbox("Jenis Kelamin", ["", "Male", "Female"])
-            age = st.number_input("Usia", min_value=0, max_value=120)
+            age = st.number_input("Usia", min_value=1, max_value=120)
             hypertension_label = st.selectbox("Riwayat Hipertensi", ["", "No", "Yes"])
-            hypertension = 1 if hypertension_label == "Yes" else 0
             heart_disease_label = st.selectbox("Riwayat Penyakit Jantung", ["", "No", "Yes"])
-            heart_disease = 1 if heart_disease_label == "Yes" else 0
 
         with col2:
             smoking_status = st.selectbox("Riwayat Merokok", ["", "No Info", "current", "ever", "former", "never", "not current"])
@@ -42,38 +41,51 @@ with tab1:
             hba1c = st.number_input("HbA1c Level", min_value=0.0, max_value=50.0)
             glucose_input = st.text_input("Blood Glucose Level (mg/dL)", "")
 
-            if glucose_input:
-                try:
-                    glucose = int(glucose_input)
-                except ValueError:
-                    st.error("Harap masukkan angka yang valid.")
-
         submitted = st.form_submit_button("🔍 Prediksi")
 
         if submitted:
-            try:
-                # Encoding
-                gender_enc = le_gender.transform([gender])[0]
-                smoke_enc = le_smoking.transform([smoking_status])[0]
+            # Validasi input kosong
+            if (
+                gender == "" or
+                hypertension_label == "" or
+                heart_disease_label == "" or
+                smoking_status == "" or
+                glucose_input.strip() == "" or
+                bmi == 0.0 or
+                hba1c == 0.0
+            ):
+                st.warning("⚠️ Harap lengkapi semua isian sebelum melakukan prediksi.")
+            else:
+                try:
+                    glucose = float(glucose_input)
 
-                # Data numerik untuk diskalakan
-                numeric_features = np.array([[age, bmi, hba1c, glucose]])
-                numeric_scaled = scaler.transform(numeric_features)
+                    # Encoding
+                    gender_enc = le_gender.transform([gender])[0]
+                    smoke_enc = le_smoking.transform([smoking_status])[0]
+                    hypertension = 1 if hypertension_label == "Yes" else 0
+                    heart_disease = 1 if heart_disease_label == "Yes" else 0
 
-                # Gabungkan semua fitur
-                final_features = np.array([[gender_enc, hypertension, heart_disease, smoke_enc]])
-                input_combined = np.concatenate([final_features, numeric_scaled], axis=1)
+                    # Data numerik untuk diskalakan
+                    numeric_features = np.array([[age, bmi, hba1c, glucose]])
+                    numeric_scaled = scaler.transform(numeric_features)
 
-                # Prediksi
-                prediction = model.predict(input_combined)[0]
+                    # Gabungkan semua fitur
+                    final_features = np.array([[gender_enc, hypertension, heart_disease, smoke_enc]])
+                    input_combined = np.concatenate([final_features, numeric_scaled], axis=1)
 
-                # Hasil
-                if prediction == 1:
-                    st.error("⚠️ Hasil: **Positif Diabetes**")
-                else:
-                    st.success("✅ Hasil: **Negatif Diabetes**")
-            except Exception as e:
-                st.error(f"Terjadi kesalahan saat memproses prediksi: {e}")
+                    # Prediksi
+                    prediction = model.predict(input_combined)[0]
+
+                    # Hasil
+                    if prediction == 1:
+                        st.error("⚠️ Hasil: **Positif Diabetes**")
+                    else:
+                        st.success("✅ Hasil: **Negatif Diabetes**")
+
+                except ValueError:
+                    st.error("❌ Blood Glucose harus berupa angka.")
+                except Exception as e:
+                    st.error(f"❌ Terjadi kesalahan saat memproses prediksi: {e}")
 
     st.markdown("""
     **📌 Keterangan Riwayat Merokok:**
