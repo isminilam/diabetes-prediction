@@ -47,7 +47,7 @@ with tab1:
             # Validasi input kosong
             if (
                 gender == "" or
-                age < 0 or
+                age < 1 or
                 hypertension_label == "" or
                 heart_disease_label == "" or
                 smoking_status == "" or
