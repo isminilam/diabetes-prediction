@@ -30,7 +30,7 @@ with tab1:
 
         with col1:
             gender = st.selectbox("Jenis Kelamin", ["Male", "Female"])
-            age = st.number_input("Usia", min_value=0, max_value=120, value=25)
+            age = st.number_input("Usia", min_value=0, max_value=120)
             hypertension_label = st.selectbox("Riwayat Hipertensi", ["No", "Yes"])
             hypertension = 1 if hypertension_label == "Yes" else 0
             heart_disease_label = st.selectbox("Riwayat Penyakit Jantung", ["No", "Yes"])
@@ -38,8 +38,8 @@ with tab1:
 
         with col2:
             smoking_status = st.selectbox("Riwayat Merokok", ["No Info", "current", "ever", "former", "never", "not current"])
-            bmi = st.number_input("BMI (Body Mass Index)", min_value=0.0, max_value=80.0, value=22.0)
-            hba1c = st.number_input("HbA1c Level", min_value=0.0, max_value=50.0, value=5.5)
+            bmi = st.number_input("BMI (Body Mass Index)", min_value=0.0, max_value=80.0)
+            hba1c = st.number_input("HbA1c Level", min_value=0.0, max_value=50.0)
             glucose_input = st.text_input("Blood Glucose Level (mg/dL)", "")
 
             if glucose_input:
