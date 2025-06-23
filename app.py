@@ -38,9 +38,9 @@ with tab1:
 
         with col2:
             smoking_status = st.selectbox("Riwayat Merokok", ["No Info", "current", "ever", "former", "never", "not current"])
-            bmi = st.number_input("BMI (Body Mass Index)", min_value=10.0, max_value=60.0, value=22.0)
-            hba1c = st.number_input("HbA1c Level", min_value=3.0, max_value=15.0, value=5.5)
-            glucose = st.number_input("Blood Glucose Level", min_value=50, max_value=300, value=100)
+            bmi = st.number_input("BMI (Body Mass Index)", min_value=0.0, max_value=80.0, value=22.0)
+            hba1c = st.number_input("HbA1c Level", min_value=0.0, max_value=50.0, value=5.5)
+            glucose = st.number_input("Blood Glucose Level", min_value=0, max_value=500, value=100)
 
         submitted = st.form_submit_button("🔍 Prediksi")
 
