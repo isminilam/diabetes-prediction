@@ -40,8 +40,14 @@ with tab1:
             smoking_status = st.selectbox("Riwayat Merokok", ["No Info", "current", "ever", "former", "never", "not current"])
             bmi = st.number_input("BMI (Body Mass Index)", min_value=0.0, max_value=80.0, value=22.0)
             hba1c = st.number_input("HbA1c Level", min_value=0.0, max_value=50.0, value=5.5)
-            if st.checkbox("Masukkan nilai Glukosa"):
-                glucose = st.number_input("Blood Glucose Level", min_value=0, max_value=500)
+            glucose_input = st.text_input("Blood Glucose Level (mg/dL)", "")
+
+            if glucose_input:
+                try:
+                    glucose = int(glucose_input)
+                    st.success(f"Glucose value: {glucose}")
+                except ValueError:
+                    st.error("Harap masukkan angka yang valid.")
 
         submitted = st.form_submit_button("🔍 Prediksi")
 
