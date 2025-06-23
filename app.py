@@ -45,7 +45,6 @@ with tab1:
             if glucose_input:
                 try:
                     glucose = int(glucose_input)
-                    st.success(f"Glucose value: {glucose}")
                 except ValueError:
                     st.error("Harap masukkan angka yang valid.")
 
