@@ -24,7 +24,7 @@ tab1, tab2 = st.tabs(["Prediksi Diabetes", "Kenali Diabetes"])
 # ========================
 with tab1:
     st.subheader("🩺 Prediksi Risiko Diabetes")
-    st.write("Masukkan informasi berikut untuk memprediksi risiko diabetes.")
+    st.write("Masukkan data berikut untuk memprediksi risiko diabetes.")
 
     with st.form("form_prediksi"):
         col1, col2 = st.columns(2)
@@ -79,9 +79,9 @@ with tab1:
 
                     # Hasil
                     if prediction == 1:
-                        st.error("⚠️ Hasil: **Positif Diabetes**")
+                        st.error("⚠️ Hasil: **Positif Risiko Diabetes**")
                     else:
-                        st.success("✅ Hasil: **Negatif Diabetes**")
+                        st.success("✅ Hasil: **Negatif Risiko Diabetes**")
 
                 except ValueError:
                     st.error("❌ Blood Glucose harus berupa angka.")
